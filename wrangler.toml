@@ -4,5 +4,5 @@ compatibility_date = "2024-05-29"
 compatibility_flags = ["nodejs_compat"]
 
 kv_namespaces = [
-  { binding = "settings", 878868911aeb4e4bb4993c869125996f = "alpHa-kv" }
+  { binding = "settings", 6eec487513e54971820224231232a62a = "panelkv" }
 ]
