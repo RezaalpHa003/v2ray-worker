@@ -1,8 +1,34 @@
-name = "v2ray-worker"
-main = "src/worker.ts"
-compatibility_date = "2026-09-21"
-compatibility_flags = ["nodejs_compat"]
-
-kv_namespaces = [
-  { binding = "settings", id = "6eec487513e54971820224231232a62a" }
-]
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	// Top-level configuration
+	"name": "v2ray-worker",
+	"main": "src/index.js",
+	// Set this to today's date
+	"compatibility_date": "2026-09-22",
+	"workers_dev": false,
+	"route": {
+		"pattern": "example.org/*",
+		"zone_name": "example.org",
+	},
+	"kv_namespaces": [
+		{
+			"binding": "<settings>",
+			"id": "<6eec487513e54971820224231232a62a>",
+		},
+	],
+	"env": {
+		"staging": {
+			"name": "v2ray-worker",
+			"route": {
+				"pattern": "staging.example.org/*",
+				"zone_name": "example.org",
+			},
+			"kv_namespaces": [
+				{
+					"binding": "<settings>",
+					"id": "<6eec487513e54971820224231232a62a>",
+				},
+			],
+		},
+	},
+}
